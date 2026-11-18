@@ -33,3 +33,4 @@ def acordou():
 
 acordou()
 print (f"\nseu nome é {seu_nome}, e você é um {racas[sua_raça]}")
+print ()
