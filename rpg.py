@@ -5,8 +5,8 @@ armas_iniciais = ["espada", "arco", "martelo"]
 dano_inicial = [""]
 inimigos_habitantes = ["ladrão", "goblin", "morcegos"]
 
-seu_nome = "a"
-sua_raça = "b"
+seu_nome = ""
+sua_raça = ""
 
 slot_arma = ""
 slot_1 = ""
@@ -28,18 +28,16 @@ def personagem():
             break
         else:
             print("\nNão ouve uma escolha valida, por favor selecione uma escolha valida")
-    quest()
-
-
-def quest():
-    print("\n Você acorda em um local estranho, com um mapa ao seu lado")
-    print(".... \n Você olha o mapa e percebe 3 direções distintas")
-    print("Cada direção tem um simbolo, eles são .... \n Um muro de tijolos \n Uma arvore \n Uma pedra")
-    print("Atras do mapa esta escrito \n\"A cada um destes locais a uma provação que so o guerreiro poderia completa-la\"")
-    print(f"O nome do guerreiro foi proclamado pela profecia .... {seu_nome} ....")
 
 
 
 
 
+
+#    jogo rodando    #
 personagem()
+print("\n Você acorda em um local estranho, com um mapa ao seu lado")
+print(".... \n Você olha o mapa e percebe 3 direções distintas")
+print("Cada direção tem um simbolo, eles são .... \n Um muro de tijolos \n Uma arvore \n Uma pedra")
+print("Atras do mapa esta escrito \n\"A cada um destes locais a uma provação que so o guerreiro poderia completa-la\"")
+print(f"O nome do guerreiro foi proclamado pela profecia .... {seu_nome} ....")
