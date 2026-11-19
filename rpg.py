@@ -1,4 +1,4 @@
-#    variaveis globais    #
+#    variaveis super globais    #
 racas = ["humano", "elfo", "anão", "draconico"]
 locais = ["cidade", "floresta", "minas"]
 armas_iniciais = ["espada", "arco", "martelo"]
@@ -18,7 +18,7 @@ slot_3 = ""
 #    defs (oque faz o jogo rodar)    #
 def personagem():
     global sua_raça, seu_nome
-    print("\n\n        SEJA BEM VINDO AO MUNDO DE ELDRIN \n\n")
+    print("\n\n        SEJA BEM VINDO AO MUNDO DE RPGLANDIA \n\n")
     nome = input("Qual é o seu nome? : ")
     while True:
         escolha_raça = int(input("Selecione sua raça (1:Humano  2:Elfo  3:Anão) : ")) - 1
@@ -27,7 +27,20 @@ def personagem():
             seu_nome = nome
             break
         else:
+<<<<<<< HEAD
             print("\nNão ouve uma escolha valida, por favor selecione uma escolha valida")
+=======
+            print("\nO corpo que selecionou não existe, escolha algum dentre os existentes")
+    quest()
+
+
+def quest():
+    print("\n Você acorda em um local estranho, com um mapa ao seu lado")
+    print(".... \n Você olha o mapa e percebe 3 direções distintas")
+    print("Cada direção tem um simbolo, eles são .... \n Um tijolo \n Uma árvore \n Um pedregulho")
+    print("Atras do mapa esta escrito \n\"A cada um destes locais a uma provação que so o guerreiro poderia completa-la\"")
+    print(f"O nome do guerreiro foi proclamado pela profecia .... {seu_nome} ....")
+>>>>>>> 90c06b0200fbb5ae2814b39d10cc28e46b638883
 
 
 
