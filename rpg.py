@@ -3,7 +3,7 @@ racas = ["humano", "elfo", "anão", "draconico"]
 locais = ["cidade", "floresta", "minas"]
 armas_iniciais = ["espada", "arco", "martelo"]
 dano_inicial = [""]
-inimigos_habitantes = ["ladrão", "slime", "morcegos"]
+inimigos_habitantes = ["ladrão", "goblin", "morcegos"]
 
 seu_nome = "a"
 sua_raça = "b"
