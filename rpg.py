@@ -28,8 +28,6 @@ def personagem():
             break
         else:
             print("\nO corpo que selecionou não existe, escolha algum dentre os existentes")
-    quest()
-
 
 
 
