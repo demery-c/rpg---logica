@@ -15,7 +15,6 @@ slot_3 = ""
 
 
 
-
 #    defs (oque faz o jogo rodar)    #
 def personagem():
     global sua_raça, seu_nome
@@ -30,6 +29,7 @@ def personagem():
         else:
             print("\nNão ouve uma escolha valida, por favor selecione uma escolha valida")
     quest()
+
 
 def quest():
     print("\n Você acorda em um local estranho, com um mapa ao seu lado")
