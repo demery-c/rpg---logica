@@ -30,6 +30,7 @@ def personagem():
     else:
         aquaticos()
 
+
 def florestais():  # def acionada ao ser um boi tata ou mapinguari #
     print(f"\n\n{seu_nome} você é um(a) {racas[sua_raça]}, uma criatura mística nativa das florestas amazonicas.")
     print("OS invasores estão desmatando o seu lar. \nA floresta e todos os habitantes dela estão implorando por ajuda.... \nSem você não tera como eles se protegerem.")
@@ -37,12 +38,64 @@ def florestais():  # def acionada ao ser um boi tata ou mapinguari #
     while True:    ## decisão de jogar ou não (S/N) ##
         escolha = input("S/N: ").upper()
         if escolha == "S":
-            break 
+            fdefesa()
+            break
         elif escolha == "N":
             print("\n\nA floresta CHORA ....... GRITOS E MORTE ASSOLAM O LOCAL ....... voCe MorRe jUnTo com a AMAZONia")
             break
         else:
             print("\nEscolha uma opção válida (S/N): ")
+
+def fdefesa():
+    print("Você chega para o combate contra os invasores. \n Eles estão armados dos pés a cabeça \nAgora a cobra vai fumar")
+    print("\nComo você ira defender sua casa?")
+    while True:  
+        try:
+            escolha = int(input("Agarrar(1), Diálogo(2): "))
+            if escolha == 1:
+                print("Você segura os invasores com tanta força que eles EXPLODEM!!")
+                fataque_agarre()
+                break
+            elif escolha == 2:
+                print("Você conversa com eles e explica que desmatar não é a solução \n eles aprendem e vão embora sem causar destruição")
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
+def fataque_agarre():
+    print("\nApós você agarrar os invasores, todos na floresta ficam em choque com a sua agressividade \n Os moradores se juntam e te expulsam da vila ")
+    print("\nComo você ira reagir?")
+    while True:
+        try:
+            escolha = int(input("Ira sair(1), Vai matar a vila(2):  "))
+            if escolha == 1:
+                print("Você cede a pressão dos moradores e vai embora, com o rabo entre as pernas")
+                fatque_exilio()
+                break
+            elif escolha == 2:
+                print("Sua ira se instaura em você, o odio na sua veia pulsa...")
+                fatque_odio()
+                break
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
+def fatque_odio():
+    print("\n Com seu odio você aniquila alguns aldeões, mas a vila inteira se junta contra você \n Eles são muitos, seu corpo não suporta")
+    print("\n VOCÊ ESTÁ MORTO!")          
+            
+def fatque_exilio():
+    print("\n Você sai apressadamente da vila, percebendo o que você fez...")
+    print("\n Seu coração sente odio(1), ou compaixão(2) ?")
+    while True:
+        try:
+            escolha = int(input("(1), (2):  "))
+            if escolha == 1:
+                print("\n O odio toma conta do seu coração, você quer ter sua vingança! \n Você ira retornar?")
+            elif escolha == 2:
+                print("A Compaixão toma conta do seu coração, Você quer se redimir \n Sua redenção sera atingida?")
+                break
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
 
 def aquaticos():  # def acionada ao ser um boto ou iara #
     print(f"\n\n{seu_nome} você é um(a) {racas[sua_raça]}, uma criatura mística nativa dos rios amazonicos.")
