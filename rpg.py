@@ -258,6 +258,7 @@ def boss_solo():
         print(f"O lider dos caçadores {ações_boss[ação]}, te tirando {danos[ação]} de dano ")
         input("pressione enter para continuar.......")
 
+<<<<<<< HEAD
 def finais():
     global pureza, seu_nome
     if pureza == 0:
@@ -275,5 +276,7 @@ def finais():
 
  
 
+=======
+>>>>>>> ab5a41a45862224a246191382ac3a30a8f173cae
 #    jogo rodando    #
 personagem()
