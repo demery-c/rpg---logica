@@ -58,6 +58,21 @@ def fdefesa():
                 break
             elif escolha == 2:
                 print("Você conversa com eles e explica que desmatar não é a solução \n eles aprendem e vão embora sem causar destruição")
+                fdialogo()
+                break
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
+def fdialogo():
+    print("\n Após a sua diplomacia os moradores percebem a sua sabedoria, e escolhem te eleger como o ancião da vila ")
+    while True:  
+        try:
+            escolha = int(input("\n Você aceita (1) ou não(2)"))
+            if escolha == 1:
+                print("Os moradores se alegram com a sua escolha \n todos então começam a iniciar os preparativos para o ritual de passagem")
+                break
+            elif escolha == 2:
+                print("Os moradores se decepicionam com a sua escolha \n Todo então começam a se juntar em volta de você")
         except ValueError:
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
@@ -80,18 +95,23 @@ def fataque_agarre():
 
 def fatque_odio():
     print("\n Com seu odio você aniquila alguns aldeões, mas a vila inteira se junta contra você \n Eles são muitos, seu corpo não suporta")
-    print("\n VOCÊ ESTÁ MORTO!")          
+    print("\n VOCÊ ESTÁ MORTO!")       
+    print("\n FINAL RUIM")   
             
 def fatque_exilio():
-    print("\n Você sai apressadamente da vila, percebendo o que você fez...")
-    print("\n Seu coração sente odio(1), ou compaixão(2) ?")
+    print("\n Você sai apressadamente da vila, percebendo o que você fez... ")
     while True:
         try:
-            escolha = int(input("(1), (2):  "))
+            escolha = int(input("Seu coração sente odio(1), ou compaixão(2) ?"))
             if escolha == 1:
-                print("\n O odio toma conta do seu coração, você quer ter sua vingança! \n Você ira retornar?")
+                print("\n O odio toma conta do seu coração, você quer ter sua vingança! \n Você retorna a vila, armado até os dentes, pronto para exterminar aqueles que te expulsaram")
+                print(f"\n {seu_nome} se prontifica e em um ataque surpresa elima todos os seus ex-companheiros \n A vila agora esta em seu comando!")
+                print("\n FINAL GENOCIDA")
+                break
             elif escolha == 2:
-                print("A Compaixão toma conta do seu coração, Você quer se redimir \n Sua redenção sera atingida?")
+                print("A Compaixão toma conta do seu coração, Você quer se redimir \n Logo você começa a praticar boas ações, e sua reputação aumenta!")
+                print(f"Você retorna a vila, os cidadãos percebem a sua mudança {seu_nome} e te acolhem")
+                print("\n FINAL REDIMIDO")
                 break
         except ValueError:
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
