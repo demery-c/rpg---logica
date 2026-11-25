@@ -31,6 +31,7 @@ def personagem():
         aquaticos()
 
 
+#   florestais    #
 def florestais():  # def acionada ao ser um boi tata ou mapinguari #
     print(f"\n\n{seu_nome} você é um(a) {racas[sua_raça]}, uma criatura mística nativa das florestas amazonicas.")
     print("OS invasores estão desmatando o seu lar. \nA floresta e todos os habitantes dela estão implorando por ajuda.... \nSem você não tera como eles se protegerem.")
@@ -61,6 +62,7 @@ def fdefesa():
         except ValueError:
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
+# ataque #
 def fataque_agarre():
     print("\nApós você agarrar os invasores, todos na floresta ficam em choque com a sua agressividade \n Os moradores se juntam e te expulsam da vila ")
     print("\nComo você ira reagir?")
@@ -97,6 +99,7 @@ def fatque_exilio():
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
 
+#   aquaticos    #
 def aquaticos():  # def acionada ao ser um boto ou iara #
     print(f"\n\n{seu_nome} você é um(a) {racas[sua_raça]}, uma criatura mística nativa dos rios amazonicos.")
     print("Você ouve relatos de que os caçadores estão atras dos animais marinhos \nSupostamente vocês estão iludindo cidadões e matando-os afogados \nVocê precisa ajudar os animais do grande rio amazonico") 
