@@ -5,7 +5,13 @@ racas = ["boitatá", "mapinguari", "boto", "iara"]
 seu_nome = ""
 sua_raça = ""
 
+<<<<<<< HEAD
 pureza = 0
+=======
+pontos_ritual = 0
+
+camando_aquatico = ""
+>>>>>>> a958578ea3f4a1993201d74c1562bb7b7273bf0e
 
 #    defs (oque faz o jogo rodar)    #
 def personagem():
@@ -64,18 +70,63 @@ def fdefesa():
         except ValueError:
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
+#   Dialogo     #
+
 def fdialogo():
     print("\n Após a sua diplomacia os moradores percebem a sua sabedoria, e escolhem te eleger como o ancião da vila ")
     while True:  
         try:
-            escolha = int(input("\n Você aceita (1) ou não(2)"))
+            escolha = int(input("\n Você aceita (1) ou não(2)  "))
             if escolha == 1:
                 print("Os moradores se alegram com a sua escolha \n todos então começam a iniciar os preparativos para o ritual de passagem")
+                fdialogo_aceita()
                 break
             elif escolha == 2:
                 print("Os moradores se decepicionam com a sua escolha \n Todo então começam a se juntar em volta de você")
+                fdialogo_recusa()
+                break
         except ValueError:
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
+def fdialogo_recusa():
+    print("Os moradores começam a te empurrar em direção ao centro da vila \n Eles estão te direcionando para a fogueira, você quer reagir?")
+    while True:  
+        try:
+            escolha = input("\n S/N ").upper()
+            if escolha == "S":
+                print("Você reage contra os habitantes, mas eles são muitos")
+                print("\n VOCÊ ESTÁ MORTO!")       
+                print("\n FINAL RUIM")   
+                break
+            elif escolha == "N":
+                print("Os moradores te levam até o calabouço... \n Você então é preso pelo resto da sua vida!")
+                print("FINAL CARCERÁRIO")
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+
+def fdialogo_aceita():
+    global pontos_ritual
+    print("\n O moradores te indicam o que você tem que pegar \n Cinco itens... ")
+    inv = 0
+    while inv <= 2:
+        try:
+            escolha = int(input("\n flor dourada(1) \n calice de prata(2) \n pote de cerâmica(3) \n pião(4) \n cocar(5):  "))
+            if escolha == 1 or escolha == 2:
+                pontos_ritual = pontos_ritual + 5
+            elif escolha == 3 or escolha == 4:
+                pontos_ritual = pontos_ritual + 10
+            elif escolha == 5:
+                pontos_ritual = pontos_ritual + 20            
+            inv = inv + 1
+        except ValueError:
+            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+    if pontos_ritual >= 30:
+        print("Os sacrificios ritualisticos foram perfeitamente escolhidos... \n você se torna o ancião da vila com respeito máximo")
+        print("\n FINAL BOM")
+    elif pontos_ritual <= 30:
+        print("Os sacrificio ritualisticos não foram perfeitamente escolhidos... \n você se torna o ancião da vila, mas ninguem te respeita")
+        print("\n FINAL MÉDIO")
+
 
 # ataque #
 def fataque_agarre():
