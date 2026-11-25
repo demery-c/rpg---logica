@@ -1,4 +1,5 @@
 #    variaveis globais    #
+
 racas = ["boitatá", "mapinguari", "boto", "iara"]
 
 seu_nome = ""
