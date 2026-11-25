@@ -1,5 +1,4 @@
 #    variaveis globais    #
-
 racas = ["boitatá", "mapinguari", "boto", "iara"]
 
 seu_nome = ""
@@ -130,17 +129,19 @@ def a_reunião():
 def reunidos():
     global comando_aquatico, sua_raça
     print("os povos maritimos e as criaturas misticas que ali abitam se encontram no fundo do rio \nVocê pode explicar a situação como")
-    print("[1] Os caçadores estão nos matando, alguem faça alguma coisa\n[2] Reuni vocês para coordenarmos as lutas contra os caçadores \n[3] Eu e mais 2 pessoas lutaremos contra os invasores... Quem se voluntaria")
+    print("\n[1] Os caçadores estão nos matando, alguem faça alguma coisa\n[2] Reuni vocês para coordenarmos as lutas contra os caçadores \n[3] Eu os convoco para lutarmos contra os caçadores. QUEM VEM COMIGO!!!")
     while True:      ## sistema de escolhas de raça ##
         try:
             escolha = int(input("Qual sera sua abordagem???"))
             if escolha == 1 :
                 comando_aquatico = 1
+                print("Uma guerra ocorre entre os caçadores e vocês \nVocê ve um ser mistico tomando a frente da guerra \nVocê pode dar apoio a ele na luta contra o lider dos caçadores")
             if escolha == 2:               
                 comando_aquatico = 2
+                print("A guerra se inicia, vocês lutam com diversos caçadores \nDepois de muito tempo o lider dos caçadores vai lutar diretamente com vocês")
             elif escolha == 3:
                 comando_aquatico = 3
-                print("Você organiza a luta contra os caçadores \2Com uma ")
+                print("\n Você organiza a luta contra os caçadores \2Comandando as tropas, você chega diante do lider dos caçadores")
             else:
                 print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
         except ValueError:
