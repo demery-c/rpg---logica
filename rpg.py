@@ -215,6 +215,5 @@ def reunidos():
             print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
 
-
 #    jogo rodando    #
 personagem()
