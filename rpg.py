@@ -1,17 +1,14 @@
 #    variaveis globais    #
 import random as r
-racas = ["boitatá", "mapinguari", "boto", "iara"]
+racas = ["boitatá", "mapinguari", "Boto", "Iara"]
 
 seu_nome = ""
 sua_raça = ""
 
-<<<<<<< HEAD
 pureza = 0
-=======
 pontos_ritual = 0
 
 camando_aquatico = ""
->>>>>>> a958578ea3f4a1993201d74c1562bb7b7273bf0e
 
 #    defs (oque faz o jogo rodar)    #
 def personagem():
@@ -179,6 +176,7 @@ def aquaticos():  # def acionada ao ser um boto ou iara #
         escolha = input("S/N: ").upper()
         if escolha == "S":
             a_reunião() 
+            break
         elif escolha == "N":
             print("\n\nUm tempo se passa ....... CORPOS APARECEM AS MARGEMS DO RIO ....... sEM VocÊ todAs AS criAturAs morReRam")
             break
@@ -187,34 +185,36 @@ def aquaticos():  # def acionada ao ser um boto ou iara #
 
 def a_reunião():
     global pureza
-    print("Você lembra da velha tradição \nOs botos cantam as margens do rio, e depois descem \nAssim reunindo-os e ordenando em uma crise")
+    print(f"\n\nVocê lembra da velha tradição \n{racas[sua_raça]} cantam as margens do rio, e depois descem \nAssim reunindo-os e ordenando em uma crise")
     print("você pode seguir sozinho, ou convocar o chamado das crises, e reunir a sociedade maritima")
     while True:    ## decisão de jogar ou não (S/N) ##
         escolha = input("Chamar a reunião? S/N: ").upper()
         if escolha == "S":
             reunidos() 
+            break
         elif escolha == "N":
-            input("Você ignora as tradições e ira enfrentar os caçadores sozinho(a)       (Pressione enter para continuar .....)")
+            input("\nDepois de muito tempo você encontra o lider dos caçadores \nE ignorando as tradições \nIra enfrenta-lo sozinho(a)       (Pressione enter para continuar .....)")
             boss_solo()
+            break
         else:
             print("\nEscolha uma opção válida (S/N): ")    
 
 
 def reunidos():
     global comando_aquatico, sua_raça, pureza
-    print("os povos maritimos e as criaturas misticas que ali abitam se encontram no fundo do rio \nVocê pode explicar a situação como")
-    print("\n[1] Os caçadores estão nos matando, alguem faça alguma coisa\n[2] Reuni vocês para coordenarmos as lutas contra os caçadores \n[3] Eu os convoco para lutarmos contra os caçadores. QUEM VEM COMIGO!!!")
+    print("\nOs povos maritimos e as criaturas misticas que ali abitam se encontram no fundo do rio \nVocê pode explicar a situação como")
+    print(f"\n[1] Os caçadores estão nos matando, alguem faça alguma coisa\n[2] Reuni vocês para coordenarmos as lutas contra os caçadores \n[3] Eu {seu_nome} os convoco para lutarmos contra os caçadores. QUEM VEM COMIGO!!!")
     while True:      ## sistema de escolhas de raça ##
         try:
-            escolha = int(input("Qual sera sua abordagem???"))
+            escolha = int(input("\nQual sera sua abordagem???"))
             if escolha == 1 :
-                print("Uma guerra ocorre entre os caçadores e vocês \nVocê ve um ser mistico tomando a frente da guerra \nVocê o segue para apoia-lo na luta contra o lider dos caçadores")
+                print("\nUma guerra ocorre entre os caçadores e vocês \nVocê ve um ser mistico tomando a frente da guerra \nVocê o segue para apoia-lo na luta contra o lider dos caçadores")
                 pureza = 1
             if escolha == 2:               
-                print("A guerra se inicia, vocês lutam com diversos caçadores \nDepois de muito tempo o lider dos caçadores vai lutar diretamente com vocês")
+                print("\nA guerra se inicia, vocês lutam com diversos caçadores \nDepois de muito tempo o lider dos caçadores vai lutar diretamente com vocês")
                 pureza = 2
             elif escolha == 3:
-                print("\n Você organiza a luta contra os caçadores \2Comandando as tropas, você chega diante do lider dos caçadores")
+                print("\nVocê organiza a luta contra os caçadores \nComandando as tropas, você chega diante do lider dos caçadores")
                 pureza = 3
             else:
                 print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
@@ -226,43 +226,68 @@ def reunidos():
 
 def boss_solo():
     vida = 100
-    boss = 100
+    boss = 150
     atordoado = 0
     ações_boss = ["atirou em você", "te chutou", "te deu um soco"]
     danos = ["40", "20", "30"]
     while boss > 0:
         print("\n\n\n\n\n\n") 
         print(f"Você esta com {vida} de vida")
-        print(f"O lider dos caçadores esta com {boss*10} de vida")
-        print(f"")
+        print(f"O lider dos caçadores esta com {boss} de vida")
+        print(f"O lider dos caçadores esta atordado por {atordoado} turnos")
         print("\nSuas ações são")
-        try:
-            print("[1] encantar (atordoa o inimigo por 2 turnos) \n[2] Soca-lo (30 de dano) \n[3] Jato d'agua (45 de dano, mas so pode ser usado em oponentes atordoados)")
-            escolha = int(input("\nOque fara?? : "))
-            if escolha == 1:
-                atordoado = atordoado + 2
-            elif escolha == 2:
-                atordoado = atordoado - 1
-            elif escolha == 3:
-                print("Você da 40")
-                input ("pressione enter para continuar........")
-                atordoado = atordoado - 1
-            else:
+        while True:
+            try:
+                print("[1] encantar (atordoa o inimigo por 2 turnos) \n[2] Soca-lo (30 de dano) \n[3] Jato d'agua (45 de dano, mas so pode ser usado em oponentes atordoados)")
+                escolha = int(input("\nOque fara?? : "))
+                if escolha == 1:
+                    print("Você encanta o lider dos caçadores, ele fica atordoado por 2 turnos")
+                    atordoado = atordoado + 2
+                    break
+                elif escolha == 2:
+                    print("Você da 30 de dano no lider dos caçadores")
+                    input ("pressione enter....")
+                    boss = boss - 30
+                    break  
+                elif escolha == 3 and atordoado > 0:
+                    print("Você da 40 de dano no lider dos caçadores")
+                    input ("pressione enter....")
+                    boss = boss - 40
+                    break
+                else:
+                    print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
+            except ValueError:
                 print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
-        except ValueError:
-            print("\nEscolha alguma opção dentre as existentes (escreva apenas o numero da opção)")
 
         if atordoado < 0:
             atordoado = 0
-        ação = r.randint(1,3)
-        print(f"O lider dos caçadores {ações_boss[ação]}, te tirando {danos[ação]} de dano ")
-        input("pressione enter para continuar.......")
 
-<<<<<<< HEAD
+        if atordoado == 0:
+            ação = r.randint(0,2)
+            print(f"\nO lider dos caçadores {ações_boss[ação]}, te tirando {danos[ação]} de dano ")
+            vida = vida - int(danos[ação])
+        elif atordoado >= 0:
+            print("\nO lider dos caçadores esta atordado, ele não pode atacar")
+            atordoado = atordoado - 1
+        input("pressione enter para continuar.......")
+    if vida <= 0:
+        if pureza == 0:
+            print("\n\n\n\n\n\n") 
+            print("Você foi derrotado pelo lider dos caçadores")
+            print("Por não ter reunido os povos maritimos, eles são mortos sem saber do inimigo")
+            print("Seu egoismo matou todos eles")
+        else:
+            print("\n\n\n\n\n\n") 
+            print("Os caçadores foram derrotados, mas você também foi morto na batalha")
+            print("Parabens, a vila foi salva, graças ao seu sacrificio")
+    if boss <= 0:
+        print("\n\n\n\n\n\n") 
+        finais()
+
 def finais():
     global pureza, seu_nome
     if pureza == 0:
-        print(f"Você foi um bravo guerreiro(a), e tudo isso sem ninguem saber que {seu_nome} salvou eles")
+        print(f"Você foi um bravo guerreiro(a), e tudo isso sem ninguem saber quem foi {seu_nome}")
         print(f"Parabens, você livrou os rios dos caçadores, sem precisar ganhar os creditos")
     elif pureza == 1:
         print(f"Aquele ser que tomou a frente foi proclamado o senhor dos rios amazonicos\nVocê ouve historias de como ele salvou todos eles")
@@ -276,7 +301,5 @@ def finais():
 
  
 
-=======
->>>>>>> ab5a41a45862224a246191382ac3a30a8f173cae
 #    jogo rodando    #
 personagem()
